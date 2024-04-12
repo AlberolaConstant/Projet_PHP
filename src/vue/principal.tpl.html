@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+    <html lang="fr">
+    
+        <head>
+            <meta charset="utf-8" />
+            <title>Squelette valide de page Web</title>
+            <link rel="stylesheet" href="../vue/principal.css">
+        </head>
+    
+        <body>
+
+            <p>Connecté en tant que <span>[onshow.pseudo]</span><p>
+
+            <a id="deconnecter" href=[onshow.cible]?statut=deconnection>Se deconnecter</a>
+
+
+            <form id="form_recherche" action=[onshow.cible]?statut=chercher method="post">
+
+                <div class="recherche_group">
+                    <label>Chercher un utilisateur</label>
+                </div>
+
+                <div class="recherche_group">
+                    <input name ="chercher" id="chercher" type="text"/>  
+                </div>
+
+                <div class="recherche_group">
+                    <input id="chercher_submit" type="submit" value="Chercher"/>
+                </div>
+
+            </form>
+            
+            <div id="options">
+
+                <div class="button">
+                    <a id="collection" href=[onshow.cible]?statut=collection>Ma collection</a>
+                </div>
+
+                <div class="button">
+                    <a id="expedition" href=[onshow.cible]?statut=expedition>Expedition</a>
+                </div>
+
+            </div>
+
+
+            
+
+        </body>
+    
+</html>

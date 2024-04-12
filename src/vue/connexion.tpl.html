@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+    <html lang="fr">
+    
+        <head>
+            <meta charset="utf-8" />
+            <title>Squelette valide de page Web</title>
+            <link rel="stylesheet" href="../vue/connexion.css">
+        </head>
+    
+        <body>
+
+        <p id="msg">[onshow.message]</p>
+
+        <div id="form">    
+
+            <form action=[onshow.cible] method="post">
+                
+                <div id="input">
+
+                    <div class="sub_input">
+                        <label class="text1">Nom d'utilisateur</label>
+                        <br>
+                        <input class="zone1" type="text" id="login" name="login"/>
+                    </div>
+
+                    <div class="sub_input">
+                        <label class="text1">Mot de passe</label>
+                        <br>
+                        <input class="zone1" type="password" id="password" name="password"/>
+                    </div>
+
+                    <div class="sub_input">
+                        <input type="submit" id="valider" value="Connexion"/>
+                    </div>
+
+                </div>
+
+        </div>
+
+        </body>
+    
+</html>
