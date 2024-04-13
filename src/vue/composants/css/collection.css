@@ -1,0 +1,67 @@
+#body1{
+    background-image: url(../background/collection.png);
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color:white;
+}
+
+#body2{
+    background-image: url(../background/recherche.png);
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color:white;
+}
+
+#table{
+    text-align: center;
+    width: 260px;
+    height: auto;
+    margin: auto;
+
+}
+
+#table2{
+    text-align: center;
+    width: 250px;
+    height: auto;
+    margin: auto;
+}
+
+#table3{
+    text-align: center;
+    width: 250px;
+    height: auto;
+    margin: auto;
+}
+
+#legend{
+    margin:auto;
+    text-align: center;
+    width: 250px;
+    font-size: 25px;
+}
+
+#btn_retour{
+    margin:auto;
+    padding: 10px;
+    width: 140px;
+    background-color: white;
+    border-radius: 20px;
+    border:solid;
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+    transition: transform 1s, box-shadow 1s;
+}
+
+#btn_retour:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em #AE445A;
+    transform: translateY(-0.25em);
+}
+
+.href{
+    text-decoration-line: none;
+    color: #321D1D;
+}
