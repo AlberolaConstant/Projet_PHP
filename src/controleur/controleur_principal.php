@@ -120,7 +120,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
             if ( isset($_GET["voir"]) ){
 
                 $cible = $_SERVER["PHP_SELF"] . "?statut=chercher&voir=" . $_GET["voir"];
-
+                
                 if (isset ($_GET["supr"]) ){
                     $res = $c->prepare("DELETE FROM collection WHERE (idrelation = ? and iduser = ?)");
                     $res->execute([$_GET["supr"],$_GET["voir"]]);
@@ -130,7 +130,6 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 if ( $_SESSION["droit"] == 0 )
                 {
-
                     $collection->afficher($tbs_collection);
 
                 }else{
