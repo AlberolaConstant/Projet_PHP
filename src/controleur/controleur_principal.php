@@ -21,6 +21,7 @@ $tbs_expedition->LoadTemplate("../vue/expedition.tpl.html");
 
 $cible = $_SERVER["PHP_SELF"];
 
+
 session_start(); // redemarrage de la session pour recuperer le login stocké
 
 if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien passé par une authentification
@@ -43,6 +44,8 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
         $etatConnexion = $erreur->getMessage();
     }
 
+    $collection = new collection($c,$tbs_collection);
+
     switch ($statut){
 
         case "deconnection":
@@ -61,9 +64,9 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
             }
 
-            $collection = new collection($c,$tbs_collection);
             $collection->executer();
             $collection->afficher();
+
             break;
 
         case "expedition":
@@ -106,7 +109,6 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 case "recolte":
 
-                    $collection = new collection($c,$tbs_collection);
                     $collection->executer();
                     $collection->afficher();
 
