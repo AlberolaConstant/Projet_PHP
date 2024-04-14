@@ -127,23 +127,9 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 case "recolte":
 
-                    $res = $c->prepare("SELECT nom,objet.idobjet FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
-                    $res->execute([$_SESSION["id"]]);
-
-                    $idObjetList = array();
-                    $objetList = array();
-
-                    foreach($res as $ligne) { 
-
-                        array_push($objetList,$ligne["nom"]); // on récupère le resultat de la requete pour le stocker dans objetList
-                        array_push($idObjetList,$ligne["idobjet"]); 
-
-                    }
-                  
-                    $messgae = "Retour au menu principal";
-                    $cible = "controleur_principal.php";
-
-                    $tbs_expedition->Show();
+                    $collection = new collection($c,$tbs_collection);
+                    $collection->executer();
+                    $collection->afficher();
 
                     break;
 
