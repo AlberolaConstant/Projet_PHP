@@ -18,6 +18,7 @@ class Requete {
         $this->data = $res->fetchAll();        
     }    
 }
+
 class RQ1 extends Requete {            
     public function afficher() {                // Préparation des données                
         $i = 0;                
