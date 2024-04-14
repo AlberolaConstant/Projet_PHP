@@ -64,7 +64,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
             }
 
-            $collection->executer();
+            $collection->executer($_SESSION["id"]);
             $collection->afficher();
 
             break;
@@ -97,7 +97,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 case "recolte":
 
-                    $collection->executer();
+                    $collection->executer($_SESSION["id"]);
                     $collection->afficher();
 
                     break;
