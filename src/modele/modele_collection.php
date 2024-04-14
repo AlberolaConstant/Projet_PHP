@@ -39,6 +39,7 @@ class collection extends Requete
             $nom_objet = $ligne["nom"];
 
         }
+        return $nom_objet;
     }
 }     
 ?>
