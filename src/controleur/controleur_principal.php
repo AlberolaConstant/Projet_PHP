@@ -3,6 +3,7 @@
 require("tbs_class.php");
 require("connect.inc.php");
 require("../modele/modele_collection.php");
+require("../modele/modele_user.php");
 
 $tbs_main = new clsTinyButStrong;
 $tbs_main->LoadTemplate("../vue/principal.tpl.html");
@@ -44,7 +45,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
         $etatConnexion = $erreur->getMessage();
     }
 
-    $collection = new collection($c,$tbs_collection);
+    $collection = new Collection($c,$tbs_collection);
     $recherche = new User($c,$tbs_chercher);
 
     switch ($statut){

@@ -1,7 +1,7 @@
 <?php
 require ("modele.class.php");
 
-class collection extends Requete
+class Collection extends Requete
 {
     public function executer($id){
         $this->res = $this->c->prepare("SELECT nom,collection.idrelation FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
