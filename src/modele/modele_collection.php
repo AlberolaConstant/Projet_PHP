@@ -8,7 +8,7 @@ class collection extends Requete
         $this->res->execute([$id]);
     }
     
-    public function afficher(){
+    public function afficher($tbs){
 
         $objetList = array();
         $idObjetList = array();
@@ -20,9 +20,9 @@ class collection extends Requete
 
         }
 
-        $this->tbs->MergeBlock("idobjet",$idObjetList);
-        $this->tbs->MergeBlock("objet",$objetList);
-        $this->tbs->Show();
+        $tbs->MergeBlock("idobjet",$idObjetList);
+        $tbs->MergeBlock("objet",$objetList);
+        $tbs->Show();
     }
 
     public function tirage(){
