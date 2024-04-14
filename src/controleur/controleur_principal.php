@@ -86,18 +86,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 case "tirage":
 
-                    $id = rand(1,2); // génération du numéro aléatoire 
-                    $res = $c->prepare("INSERT INTO collection (idobjet, iduser) VALUES (?,?);"); 
-                    $res->execute([$_SESSION["id"],$id]);  // on insère un objet tiré aléatoirement dans la collection de l'utilisateur
-
-                    $res = $c->prepare("SELECT nom FROM objet where idobjet = ?"); 
-                    $res->execute([$id]);  // on insère un objet tiré aléatoirement dans la collection de l'utilisateur
-
-                    foreach($res as $ligne) { 
-
-                        $nom_objet = $ligne["nom"];
-
-                    }
+                    
 
                     $message = "Vous avez obtenu :" . $nom_objet;
                     $cible = $_SERVER["PHP_SELF"] . "?statut=expedition&action=recolte";
