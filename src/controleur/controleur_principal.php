@@ -86,7 +86,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
                 case "tirage":
 
-                    $nom_objet = tirage()
+                    $nom_objet = $collection->tirage();
                     $message = "Vous avez obtenu :" . $nom_objet;
                     $cible = $_SERVER["PHP_SELF"] . "?statut=expedition&action=recolte";
 
