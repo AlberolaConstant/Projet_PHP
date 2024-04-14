@@ -2,8 +2,7 @@
 
 require("tbs_class.php");
 require("connect.inc.php");
-require("../modele/modele_collection.php");
-require("../modele/modele_user.php");
+require("../modele/modele.class.php");
 
 $tbs_main = new clsTinyButStrong;
 $tbs_main->LoadTemplate("../vue/principal.tpl.html");
