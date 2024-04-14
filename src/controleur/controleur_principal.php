@@ -119,22 +119,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
             if ( isset($_GET["voir"]) ){
 
                 $cible = $_SERVER["PHP_SELF"] . "?statut=chercher&voir=" . $_GET["voir"];
-
-                $res = $c->prepare("SELECT nom,collection.idrelation FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
-                $res->execute([$_GET["voir"]]);
-
-                $idObjetList = array();
-                $objetList = array();
-
-                foreach($res as $ligne) { 
-
-                    array_push($objetList,$ligne["nom"]); // on récupère le resultat de la requete pour le stocker dans objetList
-                    array_push($idObjetList,$ligne["idrelation"]); 
-
-                }
-
-                $id = $_GET["voir"]; // peut etre a supprimé si ca sert a rien 
-
+                
                 if (isset ($_GET["supr"]) ){
                     $res = $c->prepare("DELETE FROM collection WHERE (idrelation = ? and iduser = ?)");
                     $res->execute([$_GET["supr"],$_GET["voir"]]);
