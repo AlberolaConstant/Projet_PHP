@@ -45,6 +45,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
     }
 
     $collection = new collection($c,$tbs_collection);
+    $recherche = new User($c,$tbs_chercher);
 
     switch ($statut){
 
@@ -140,27 +141,13 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
             }else{
 
                 if (isset($_POST["chercher"])){
-                    $recherche = $_POST["chercher"];
+                    $val = $_POST["chercher"];
                 }else{
-                    $recherche = "";
+                    $val = "";
                 }
                 
-                $res = $c->prepare("SELECT iduser,login FROM user WHERE login LIKE '%' ? '%' ");
-                $res->execute([$recherche]);
-
-                $idList = array();
-                $userList = array();
-
-                foreach($res as $ligne) { 
-
-                    array_push($idList,$ligne["iduser"]); // on récupère le resultat de la requete pour le stocker dans objetList
-                    array_push($userList,$ligne["login"]); 
-
-                }
-
-                $tbs_chercher->MergeBlock("id",$idList);
-                $tbs_chercher->MergeBlock("user",$userList);
-                $tbs_chercher->Show();
+                $recherche->executer($val);
+                $recherche->afficher();
                 
             }
 
