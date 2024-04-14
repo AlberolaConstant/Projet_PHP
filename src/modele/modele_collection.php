@@ -3,14 +3,12 @@
 
 class requete2{
     protected $c;
-    protected $res;
     protected $gab;
     protected $tbs;
+    protected $res;
 
-    function __construct($param_c, $param_res, $param_tbs){
+    function __construct($param_c, $param_tbs){
         $this->c = $param_c;
-        $this->res = $param_res;
-        // $this->gab = $param_gab;
         $this->tbs = $param_tbs;
     }
 }
@@ -19,8 +17,8 @@ class collection extends requete2
 {
 
     public function executer(){
-        $res = $this->c->prepare("SELECT nom,collection.idrelation FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
-        $res->execute([$_SESSION["id"]]);
+        $this->res = $this->c->prepare("SELECT nom,collection.idrelation FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
+        $this->res->execute([$_SESSION["id"]]);
     }
     
     public function afficher(){

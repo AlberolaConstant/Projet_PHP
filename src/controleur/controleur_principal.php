@@ -2,6 +2,7 @@
 
 require("tbs_class.php");
 require("connect.inc.php");
+require("../modele/modele_collection.php");
 
 $tbs_main = new clsTinyButStrong;
 $tbs_main->LoadTemplate("../vue/principal.tpl.html");
@@ -60,7 +61,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
             }
 
-            $collection = new collection($c,$res,$tbs_collection);
+            $collection = new collection($c,$tbs_collection);
             $collection->executer();
             $collection->afficher();
                 
