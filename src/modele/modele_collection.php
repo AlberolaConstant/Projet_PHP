@@ -1,19 +1,7 @@
 <?php
-// require ("modele.class.php");
+require ("modele.class.php");
 
-class requete2{
-    protected $c;
-    protected $gab;
-    protected $tbs;
-    protected $res;
-
-    function __construct($param_c, $param_tbs){
-        $this->c = $param_c;
-        $this->tbs = $param_tbs;
-    }
-}
-
-class collection extends requete2
+class collection extends Requete
 {
 
     public function executer(){
@@ -32,7 +20,7 @@ class collection extends requete2
             array_push($idObjetList,$ligne["idrelation"]);
 
         }
-        // $id = $_SESSION["id"];
+        
         $this->tbs->MergeBlock("idobjet",$idObjetList);
         $this->tbs->MergeBlock("objet",$objetList);
         $this->tbs->Show();

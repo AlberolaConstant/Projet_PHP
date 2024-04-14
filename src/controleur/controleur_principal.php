@@ -64,27 +64,6 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
             $collection = new collection($c,$tbs_collection);
             $collection->executer();
             $collection->afficher();
-                
-            // $res = $c->prepare("SELECT nom,collection.idrelation FROM objet INNER JOIN collection ON collection.idobjet = objet.idobjet WHERE iduser = ?"); // requete qui nous permet d'avoir le nom des objets qu'un utilisateur possède
-            // $res->execute([$_SESSION["id"]]);
-
-            // $objetList = array();
-            // $idObjetList = array();
-
-            // foreach($res as $ligne) { 
-
-            //     array_push($objetList,$ligne["nom"]); // on récupère le resultat de la requete pour le stocker dans objetList
-            //     array_push($idObjetList,$ligne["idrelation"]);
-
-            // }
-
-            // // $id = $_SESSION["id"];
-
-            // $tbs_collection->MergeBlock("idobjet",$idObjetList);
-            // $tbs_collection->MergeBlock("objet",$objetList);
-            // $tbs_collection->Show();
-
-            
             break;
 
         case "expedition":
