@@ -20,10 +20,25 @@ class collection extends Requete
             array_push($idObjetList,$ligne["idrelation"]);
 
         }
-        
+
         $this->tbs->MergeBlock("idobjet",$idObjetList);
         $this->tbs->MergeBlock("objet",$objetList);
         $this->tbs->Show();
+    }
+
+    public function tirage(){
+        $id = rand(1,2); // génération du numéro aléatoire 
+        $res = $this->c->prepare("INSERT INTO collection (idobjet, iduser) VALUES (?,?);"); 
+        $res->execute([$_SESSION["id"],$id]);  // on insère un objet tiré aléatoirement dans la collection de l'utilisateur
+
+        $this->res = $this->c->prepare("SELECT nom FROM objet where idobjet = ?"); 
+        $this->res->execute([$id]);  // on insère un objet tiré aléatoirement dans la collection de l'utilisateur
+
+        foreach($this->res as $ligne) { 
+
+            $nom_objet = $ligne["nom"];
+
+        }
     }
 }     
 ?>
