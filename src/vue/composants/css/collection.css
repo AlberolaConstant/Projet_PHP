@@ -14,9 +14,24 @@
     color:white;
 }
 
+.title{
+    font-size:20px;
+}
+
+table{
+    margin-top:80px;
+}
+
+table,
+td,
+tr {
+    width: 250px;
+    text-align: center;
+}
+
 #table{
     text-align: center;
-    width: 260px;
+    width: 250px;
     height: auto;
     margin: auto;
 
@@ -38,9 +53,13 @@
 
 #legend{
     margin:auto;
-    text-align: center;
-    width: 250px;
-    font-size: 25px;
+    width: 450px;
+    font-size: 35px;
+    position: fixed; 
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
 }
 
 #btn_retour{

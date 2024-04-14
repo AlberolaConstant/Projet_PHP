@@ -16,12 +16,17 @@
         <div id="table3">
             <table>
                 <caption id="legend">Liste d'utilisateur</caption>
-
-                <tr>
-                    <td>[id.val;block=tr]</td>  
-                    <td>[user.val;block=tr]</td>  
-                    <td> <a class="href" href=[onshow.cible]?statut=chercher&voir=[id.val;block=tr]>Collection</a> </td> 
-                </tr>
+                    
+                    <tr>
+                        <td class="title">ID</td>  
+                        <td class="title">NOM</td>  
+                        <td class="title">ACTION</td> 
+                    <tr>
+                    <tr> 
+                            <td>[id.val;block=tr]</td>  
+                            <td>[user.val;block=tr]</td>  
+                            <td> <a class="href" href=[onshow.cible]?statut=chercher&voir=[id.val;block=tr]>Collection</a> </td> 
+                    </tr>               
 
             </table>
         </div>
