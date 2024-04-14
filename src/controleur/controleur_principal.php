@@ -46,7 +46,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
 
         case "deconnection":
             session_destroy(); // on detruit les informations stocké dans la session
-            header("Location: /~ebaroudi/projet/src/controleur/controleur_connection.php"); // on redirige l'utilisateur vers la page de connection
+            header("Location: controleur_connection.php"); // on redirige l'utilisateur vers la page de connection
             break;
 
         case "collection": // afficher la collection de l'utilisateur
@@ -136,7 +136,7 @@ if ( isset($_SESSION["login"]) ){ // verification que l'utiliateur est bien pass
                     }
                   
                     $messgae = "Retour au menu principal";
-                    $cible = "https://phpetu.univ-lyon2.fr/~ebaroudi/projet/src/controleur/controleur_principal.php";
+                    $cible = "controleur_principal.php";
 
                     $tbs_expedition->Show();
 

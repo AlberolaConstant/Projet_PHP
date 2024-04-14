@@ -38,7 +38,7 @@ if (isset($_POST["login"])){
             $_SESSION["id"] = $ligne["iduser"];
             $_SESSION["droit"] = $ligne["droit"];
 
-            header("Location: /~ebaroudi/projet/src/controleur/controleur_principal.php"); // on redirige l'utilisateur sur la page principale
+            header("Location: controleur_principal.php"); // on redirige l'utilisateur sur la page principale
             exit();
 
             break;
